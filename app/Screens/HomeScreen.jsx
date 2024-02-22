@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import {
   SafeAreaView,
@@ -13,9 +14,11 @@ import {
 } from 'react-native-heroicons/outline';
 import {styles} from '../theme';
 import TrendingMovies from '../components/TrendingMovies';
+import MovieList from '../components/MovieList';
 
 const HomeScreen = () => {
   const [trending, setTrending] = useState([1, 2, 3]);
+  const [upcoming, setUpcoming] = useState([1, 2, 3]);
   return (
     <View className="flex-1 bg-neutral-800">
       <SafeAreaView className="mb-3">
@@ -35,6 +38,8 @@ const HomeScreen = () => {
         contentContainerStyle={homeScreenStyles.paddingBottom}>
         {/* Trending movies carousel */}
         <TrendingMovies data={trending} />
+        {/* Upcoming movies */}
+        <MovieList title="Upcoming" data={upcoming} />
       </ScrollView>
     </View>
   );
