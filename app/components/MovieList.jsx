@@ -44,7 +44,9 @@ export default function MovieList({title, data}) {
                   style={{width: width * 0.33, height: height * 0.22}}
                 />
                 <Text className="text-neutral-200 ml-1">
-                  {movieName.length > 14 ? movieName.slice(0, 14) : movieName}
+                  {movieName.length > 14
+                    ? movieName.slice(0, 14) + '...'
+                    : movieName}
                 </Text>
               </View>
             </TouchableWithoutFeedback>
