@@ -36,7 +36,7 @@ const TrendingMovies = ({data}) => {
 
 const MovieCard = ({item, handleClick}) => {
   return (
-    <TouchableWithoutFeedback onPress={handleClick({item})}>
+    <TouchableWithoutFeedback onPress={() => handleClick(item)}>
       <Image
         source={require('../assets/images/poster_1.jpg')}
         style={{
