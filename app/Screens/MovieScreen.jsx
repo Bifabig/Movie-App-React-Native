@@ -15,6 +15,7 @@ import {styles, theme} from '../theme';
 import LinearGradient from 'react-native-linear-gradient';
 import Cast from '../components/Cast';
 import MovieList from '../components/MovieList';
+import Loading from '../components/Loading';
 
 let {width, height} = Dimensions.get('window');
 
@@ -23,6 +24,7 @@ export default function MovieScreen() {
   const [isFavorite, toggleFavorite] = useState(false);
   const [cast, setCast] = useState([1, 2, 3, 4, 5]);
   const [similarMovies, setSimilarMovies] = useState([1, 2, 3, 4, 5]);
+  const [loading, setLoading] = useState(false);
   const navigation = useNavigation();
   const movieName = 'Avengers';
   useEffect(() => {
@@ -49,19 +51,23 @@ export default function MovieScreen() {
             />
           </TouchableOpacity>
         </SafeAreaView>
-        <View>
-          <Image
-            source={require('../assets/images/poster_1.jpg')}
-            style={{width: width, height: height * 0.7}}
-          />
-          <LinearGradient
-            colors={['transparent', 'rgba(23,23,23,0.8)', 'rgba(23,23,23,1)']}
-            style={{width, height: height * 0.4}}
-            start={{x: 0.5, y: 0}}
-            end={{x: 0.5, y: 1}}
-            className="absolute bottom-0"
-          />
-        </View>
+        {loading ? (
+          <Loading />
+        ) : (
+          <View>
+            <Image
+              source={require('../assets/images/poster_1.jpg')}
+              style={{width: width, height: height * 0.7}}
+            />
+            <LinearGradient
+              colors={['transparent', 'rgba(23,23,23,0.8)', 'rgba(23,23,23,1)']}
+              style={{width, height: height * 0.4}}
+              start={{x: 0.5, y: 0}}
+              end={{x: 0.5, y: 1}}
+              className="absolute bottom-0"
+            />
+          </View>
+        )}
       </View>
       {/* Movie Details */}
       <View style={{marginTop: -(height * 0.09)}} className="space-y-3">
