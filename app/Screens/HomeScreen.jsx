@@ -46,9 +46,9 @@ const HomeScreen = () => {
           contentContainerStyle={homeScreenStyles.paddingBottom}>
           {/* Trending movies carousel */}
           <TrendingMovies data={trending} />
-          {/* Upcoming movies */}
+          {/* Upcoming movies list*/}
           <MovieList title="Upcoming" data={upcoming} />
-          {/* Top rated movies */}
+          {/* Top rated movies list*/}
           <MovieList title="Top Rated" data={topRated} />
         </ScrollView>
       )}
