@@ -10,6 +10,7 @@ export default function Cast({navigation, cast}) {
       <ScrollView
         horizontal
         showsHorizontalScrollIndicator={false}
+        // inline style to be removed
         // eslint-disable-next-line react-native/no-inline-styles
         contentContainerStyle={{paddingHorizontal: 15}}>
         {cast &&
